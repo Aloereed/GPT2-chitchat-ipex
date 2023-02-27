@@ -1,5 +1,11 @@
-# GPT2 for Chinese chitchat
+# GPT2 for Chinese chitchat (IPEX)
+## 使用方法
+使用方法请一直向下翻滚。
 
+## 测试
+Intel A770 16GB。仅可用于推断，训练暂不可用。
+
+## 原自述文件
 ## UPDATE 2022.12.04
 发布了中文预训练CLIP模型，使用140万中文图文对数据进行预训练，在图文相似度、文本相似度、图片相似度任务上有不错的表现。
 
@@ -139,7 +145,8 @@ python preprocess.py --train_path data/train.txt --save_path data/train.pkl
 
 代码中默认关闭了early stop，因为在实践中，early stop得到的模型的生成效果不一定会更好。
 ```
-python train.py --epochs 40 --batch_size 8 --device 0,1 --train_path data/train.pkl
+python train.py --epochs 40 --batch_size 8 --device 0  
+--train_path data/train.pkl
 ```
 更多的训练参数介绍，可直接看train.py中的set_args()函数中的参数说明
 
